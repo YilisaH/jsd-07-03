@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css">
+    <style>
+        header a{
+            text-decoration: none;
+            color: #6c6c6c;
+        }
+
+    </style>
+</head>
+<body>
+<div id="app">
+    <el-container>
+        <el-header height="150px">
+            <div style="width: 1200px;margin: 0 auto">
+                <img src="imgs/logo.png" style="width: 300px; vertical-align:middle" alt="">
+                <a href="">首页</a><el-divider direction="vertical"></el-divider>
+                <a href="">热点资讯</a><el-divider direction="vertical"></el-divider>
+                <a href="">商家入驻</a><el-divider direction="vertical"></el-divider>
+                <a href="">社会招聘</a><el-divider direction="vertical"></el-divider>
+                <a href="">校园招聘</a><el-divider direction="vertical"></el-divider>
+                <a href="">帮助</a>
+            </div>
+        <!--导航菜单开始-->
+            <div style="background-color: #82c8ec">
+                <el-menu style="width: 1200px; margin: 0 auto"
+                         :default-active="activeIndex"
+                         class="el-menu-demo"
+                         mode="horizontal"
+                         @select="handleSelect"
+                         background-color="#82c8ec"
+                         text-color="#fff"
+                         active-text-color="#fff">
+                    <el-menu-item index="1">精彩活动</el-menu-item>
+                    <el-menu-item index="2">当季女装</el-menu-item>
+                    <el-menu-item index="3">品牌男装</el-menu-item>
+                    <el-menu-item index="4">环球美食</el-menu-item>
+                    <el-menu-item index="5">医药健康</el-menu-item>
+                    <el-menu-item index="6">美妆彩妆</el-menu-item>
+                    <el-menu-item index="7">母婴产品</el-menu-item>
+                    <div style=" float: right; position: relative; top: 10px; right: 200px">
+                        <el-input placeholder="请输入搜索内容" v-model="wd">
+                            <el-button slot="append" icon="el-icon-search" @click="search()"></el-button>
+                        </el-input>
+                    </div>
+                </el-menu>
+            </div>
+            <!--导航菜单结束-->
+        </el-header>
+        <el-main style="width: 1200px;margin: 0 auto">
+            <el-row gutter="20">
+                <el-col span="12">
+                    <el-card>
+                        <img src="imgs/a.jpg" width="100%" alt="">
+                    </el-card>
+                </el-col>
+                <el-col span="12">
+                        <p style="font-size: 25px">
+                            森马牛仔裤女宽松慢跑裤运动风2022春季新款显瘦束脚长裤复古
+                        </p>
+                    <el-divider></el-divider>
+                    <p style="font-size: 15px;color: #666">销量:257 | 浏览量:788</p>
+                    <p style="font-size: 25px;font-weight: bold">￥128
+                        <span style="font-size: 15px;color: #666">原价:<s>258</s></span></p>
+                    <el-row gutter="20" style="text-align: center">
+                        <el-col span="8">
+                            <el-card>
+                                <img src="imgs/ewm.jpg" width="100%" alt="">
+                                <p>扫码关注公众号</p>
+                            </el-card>
+                        </el-col>
+                        <el-col span="8">
+                            <el-card>
+                                <img src="imgs/ewm.jpg" width="100%" alt="">
+                                <p>扫码购买商品</p>
+                            </el-card>
+                        </el-col>
+                        <el-col span="8">
+                            <el-card>
+                                <img src="imgs/ewm.jpg" width="100%" alt="">
+                                <p>扫码下载APP</p>
+                            </el-card>
+                        </el-col>
+                    </el-row>
+                </el-col>
+            </el-row>
+        </el-main>
+        <el-footer>
+            <div style="height: 95px; background-image: url('imgs/wave.png')">
+            </div>
+            <div style="background-color: #3f3f3f; padding:30px 0;text-align: center;color: #b1b1b1">
+                <p>Copyright © 北京达内金桥科技有限公司版权所有 京ICP备12003709号-3 京公网安备 11010802029572号</p>
+                <p>达内在线WWW.TMOOC.CN 专注于IT职业技能培训</p>
+                <p>涵盖20余门课程体系，致力于打造权威的IT职业教育学习平台</p>
+            </div>
+        </el-footer>
+    </el-container>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                activeIndex:"1",
+                wd:"",
+                }
+        },
+        methods:{
+            search(){
+                v.$message("搜索的内容是: "+v.wd)
+            },
+            handleSelect(index,indexPath){
+                v.$message(index);
+            }
+        }
+    })
+</script>
+</html>

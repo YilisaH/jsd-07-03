@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+{{info}}
+<!--    属性绑定:让元素的某个属性的值和变量进行绑定-->
+    <a :href="url">超链接</a>
+<!--    下面这种复杂写法如果idea没有安装vue插件会报错,
+在红色错误提示页面上面alt+回车选择第一个 即可解决-->
+    <a v-bind:href="url">超链接</a>
+    <input type="text" :value="url">
+    <img :src="imgUrl" alt="">
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+  let v = new Vue({
+    el:"body>div",
+    data:{
+      info:"属性绑定测试",
+        url:"https://www.bilibili.com",
+        imgUrl:"../bz3.jpg"
+    }
+  })
+</script>
+</body>
+</html>

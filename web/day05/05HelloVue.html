@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<h1>{{info}}</h1>
+</div>
+<!--引入本地框架文件-->
+<script src="js/vue.min.js"></script>
+<!--引入CND服务器框架文件-->
+<!--<script src="网址"></script>-->
+<script>
+  /*
+  Vue对象相当于是MVVM设计模式中的VM视图模型,负责将页面中可能发生改变的元素和
+  data里面的变量进行绑定,变量的值是什么页面的元素就显示什么
+  而且会不断监听变量值的改变,值只要一变会立即找到对应的元素并让元素跟着改变
+   */
+  let v = new Vue({
+    el:"body>div",
+    data:{
+      info:"Hello VUE!"
+    }
+  })
+  setTimeout(function () {
+    //之前的DOM写法,每次做相应改变都需要遍历元素
+    // let h1 = document.querySelector("h1");
+    // h1.innerText = "值改变了"
+    v.info = "值改变了!";
+  },3000)
+</script>
+</body>
+</html>

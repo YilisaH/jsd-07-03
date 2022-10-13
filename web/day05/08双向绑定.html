@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+  {{info}}
+<!--    v-model = "变量" 双向绑定,让控件和变量进行双向绑定
+双向绑定主要应用在控件中,当需要获取用户输入的某些内容时使用-->
+    <input type="text" v-model="info">
+
+    <h1>注册页面</h1>
+    用户名:<input type="text"  v-model="user.username" placeholder="请输入用户名"><br>
+    密码:<input type="password" v-model="user.password" placeholder="请输入密码"><br>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+  let v = new Vue({
+    el:"body>div",
+    data:{
+      info:"双向绑定",
+        user:{username:"",password:""}
+    }
+  })
+</script>
+</body>
+</html>

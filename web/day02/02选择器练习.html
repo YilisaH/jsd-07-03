@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /*id选择器*/
+    #gy{color: green}
+    /*类选择器*/
+    .c1{color: yellow}
+    /*属性选择器*/
+    input[type='text'],body>p{background-color: red}
+    /*子孙后代选择器*/
+    body div div p{background-color: yellow}
+    /*子元素选择器*/
+    body>div>div>p{color: pink}
+    /*伪类选择器:未访问状态*/
+    a:link{color: green}
+    /*伪类选择器:访问过状态*/
+    a:visited{color: red}
+    /*伪类选择器悬停状态*/
+    a:hover{color: yellow}
+    /*伪类选择器:点击状态*/
+    a:active{color: pink}
+
+  </style>
+</head>
+<body>
+<!--无序-->
+<ul>
+  <li>刘备</li><li id="gy">关羽</li><li class="c1">张飞</li>
+</ul>
+<p>香蕉</p><p class="c1">苹果</p>
+<input type="text">
+<input type="password">
+<div>
+  <p>p1</p>
+  <div><p>p2</p></div>
+  <div><div><p>p3</p></div></div>
+</div>
+<a href="http://tedu.cn">达内官网</a>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="姓名" id="t1">
+<input type="text" placeholder="工资" id="t2">
+<input type="text" placeholder="工作" id="t3">
+<input type="button" value="添加" onclick="f()">
+<table border="1">
+    <caption>员工列表</caption>
+    <tr>
+        <th>姓名</th><th>工资</th><th>工作</th>
+    </tr>
+</table>
+<script>
+    //1.给添加按钮添加点击事件调用f方法,在方法中创建一个tr和3个td
+    //2.给上面文本框添加id 取出文本框的内容赋值给三个td
+    //3.把3个td装进tr
+    //4.通过标签名选择器得到table 然后把tr装进table
+
+
+
+    //通过选择器找到页面中的元素对象
+    let i1 = document.querySelector("#t1");
+    let i2 = document.querySelector("#t2");
+    let i3 = document.querySelector("#t3");
+    function f(){
+        // 创建元素对象
+        let tr = document.createElement("tr");
+        let nameTd = document.createElement("td");
+        let salTd = document.createElement("td");
+        let jobTd = document.createElement("td");
+        //修改元素的文本内容
+        nameTd.innerText = i1.value;
+        salTd.innerText = i2.value;
+        jobTd.innerText = i3.value;
+        //把3个td装进tr
+        tr.append(nameTd,salTd,jobTd);
+        //得到table
+        let table = document.querySelector("table");
+        table.append(tr);
+    }
+</script>
+</body>
+</html>

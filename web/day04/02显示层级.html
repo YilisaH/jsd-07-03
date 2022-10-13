@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    #d1{
+      /*宽*/
+      width: 200px;
+      /*高*/
+      height: 100px;
+      /*背景颜色*/
+      background-color: red;
+      /*绝对定位*/
+      position: absolute;
+      /*显示层级: 值越大显示越靠前*/
+      z-index: 1;
+    }
+    #d2{
+      width: 100px;
+      height: 200px;
+      background-color: blue;
+      /*绝对定位---后执行的会覆盖先执行的(默认)*/
+      position: absolute;
+      /*显示层级: 值越大,显示越靠前*/
+      z-index: 0;
+    }
+  </style>
+</head>
+<body>
+<div id="d1"></div>
+<div id="d2"></div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /*#id选择器*/
+    #p1{color: red}
+    #p2{color: yellow}
+    /*类选择器*/
+   .c1{color: orange}
+   /*分组选择器*/
+    a,#p1,.c1{
+        background: slategray;
+    }
+    /*属性选择器*/
+    input[type='text']{color: darkblue}
+    input[type='password']{background-color: pink}
+  /*  任意元素选择器*/
+    *{
+        /* 边框 粗细 边框样式 颜色 */
+        border: 1px solid red;
+    }
+  </style>
+</head>
+<body>
+<input type="text">
+<input type="password">
+<a href="">超链接</a>
+<p id="p1">苹果</p>
+<p id="p2">香蕉</p>
+<p class="c1">橘子</p>
+<div>电视</div>
+<div>冰箱</div>
+<div class="c1">洗衣机</div>
+</body>
+</html>

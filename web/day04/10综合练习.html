@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="t1">
+<input type="button" value="帅哥" onclick="f(1)">
+<input type="button" value="美女" onclick="f(2)">
+<hr>
+<script>
+    function f(x) {
+            let url = x == 1 ? "a.jpg" : "b.jpg";
+        for (let i = 0; i < t1.value; i++) {
+            let img = document.createElement("img");
+            img.src = url;
+            document.body.append(img);
+        }
+    }
+</script>
+</body>
+</html>

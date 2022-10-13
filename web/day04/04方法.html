@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    /*CSS注释*/
+  </style>
+</head>
+<body>
+<!--HTML注释-->
+<script>
+  //JS当行注释
+  /*JS多行注释*/
+
+  //1.无参无返回值方法
+  function f1() {
+    console.log("f1")
+  }
+  //调用方法
+  f1();
+
+  //2.有参无返回值
+  function f2(name,age) {
+      console.log(name+":"+age+"岁");
+  }
+  // 调用方法,传参数值
+  f2("刘备",18);
+
+  //3. 无参有返回值
+  function f3(){
+      return"这是返回值";
+  }
+  // 接收返回值
+  let info = f3();
+  console.log(info);
+
+  //4.有参有返回值
+  function f4(x,y) {
+      return x*y;
+  }
+  let result = f4(8,9);
+  console.log(result);
+
+  //第二种声明方法的方式
+  let f5 = function (name,age) {
+      // 在浏览器控制台输出内容
+      console.log(name+":"+age);
+  }
+  // 调用方法并传参
+  f5("张飞",30);
+
+  //第三种声明方法的方式
+  let f6 = new Function("name","age","console.log(name+':'+age)");
+  // 调用方法并传参
+  f6("关羽",20);
+</script>
+</body>
+</html>

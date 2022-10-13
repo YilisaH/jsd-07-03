@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <input type="text" v-model="num1">
+    <input type="text" v-model="num2">
+    <input type="button" value="加" @click="f('+')">
+    <input type="button" value="减" @click="f('-')">
+    <input type="button" value="乘" @click="f('*')">
+    <input type="button" value="除" @click="f('/')">
+    <h1>结果:{{info}}</h1>
+</div>
+<script src="js/vue.min.js"></script>
+<script>
+    let v = new Vue({
+        el: "body>div",
+        data: {
+            info: "", num1: "", num2: ""
+        },
+        methods: {
+            f(x) {
+                if (isNaN(v.num1) || isNaN(v.num2)) {
+                    v.info = "输入数字"
+                    return;
+                }
+                //eval()方法可以将字符串以js代码的形式运行
+                v.info=eval(v.num1+x+v.num2);
+            }
+        }
+    })
+</script>
+</body>
+</html>

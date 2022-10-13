@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.tedu.boot08.mapper.MyProductMapper">
+
+    <insert id="insert">
+        INSERT INTO my_product
+VALUES (
+        null,#{title},#{saleCount},#{viewCount}
+       )
+    </insert>
+
+    <select id="selectById" resultMap="productRM">
+        <include refid="query"></include>
+        WHERE id=#{id}
+    </select>
+
+    <resultMap id="productRM" type="cn.tedu.boot08.entity.MyProduct">
+        <result column="sale_count" property="saleCount"></result>
+        <result column="view_count" property="viewCount"></result>
+    </resultMap>
+<!--多条数据查询-->
+    <select id="select" resultMap="productRM">
+        <include refid="query"></include>
+    </select>
+<!--    定义SQL语句的复用-->
+    <sql id="query">
+        SELECT id,title,sale_count,view_count FROM my_product
+    </sql>
+</mapper>

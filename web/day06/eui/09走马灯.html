@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css">
+    <style>
+        .el-carousel__item h3 {
+            background-image: url("bz3.jpg");
+            background-size: 320px 200px;
+            background-repeat: no-repeat;
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 200px;
+            margin: 0;
+
+        }
+
+        .el-carousel__item:nth-child(2n) {
+            background-image: url("bg.jpg");
+
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-image: url("bz3.jpg");
+
+            background-image: url("壁纸2.jpg");
+        }
+    </style>
+
+</head>
+<body>
+<div id="app">
+    <template>
+        <el-carousel :interval="4000" type="card" height="200px">
+            <el-carousel-item v-for="item in 6" :key="item">
+                <h3 class="medium">{{ item }}</h3>
+            </el-carousel-item>
+        </el-carousel>
+    </template>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+
+            }
+
+        },
+        methods:{
+
+        }
+
+    })
+</script>
+</html>

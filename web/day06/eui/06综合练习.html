@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css">
+    <style>
+        .el-dropdown-link {
+            cursor: pointer;
+            color: #409EFF;
+        }
+        .el-icon-arrow-down {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>下拉菜单</h1>
+    <el-dropdown @command="handleCommand()">
+  <span class="el-dropdown-link">
+    下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
+  </span>
+        <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item v-for="i in arr" :command="i.price">{{i.title}}</el-dropdown-item>
+        </el-dropdown-menu>
+    </el-dropdown>
+
+    <h1>选择器</h1>
+    <el-select v-model="value" placeholder="请选择">
+        <!--label是给客户看的,value是选中后得到的内容-->
+        <el-option
+                v-for="item in arr"
+                :label="item.title"
+                :value="item.price">
+        </el-option>
+    </el-select>
+    <h2>{{value}}</h2>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                arr:[{title:"小米手机",price:3000},
+                    {title:"华为电视",price:4000},
+                    {title:"李宁篮球鞋",price:500},
+                    {title:"匹克跑步鞋",price:200}],
+                value:""
+            }
+        },
+        methods:{
+            handleCommand(command){
+                v.$message("您选择的商品是"+command+"元");
+            }
+        }
+    })
+</script>
+</html>

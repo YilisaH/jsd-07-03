@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 有参无返回值方法
+    function f1() {
+        console.log("f1")
+    }
+    // 调用方法
+    f1();
+    //有参无返回值
+    function f2(name,age) {
+        console.log(name+age)
+    }
+    f2("刘备",12);
+    // 无参有返回值
+    function f3() {
+        return"这是返回值"
+    }
+    let info=f3();
+    console.log(info);
+    // 有参有返回值
+    function f4(x,y) {
+        return x*y;
+    }
+    let result = f4(8,9);
+    console.log(result);
+    //第二种声明方法的方式
+    let f5 = function (name,age){
+        console.log(name+":"+age)
+    }
+    f5("张飞",16);
+    // 第三种声明方法的方式
+    let f6 = new Function("name","age","console.log(name+':'+age)");
+    f6("关羽",33);
+</script>
+</body>
+</html>

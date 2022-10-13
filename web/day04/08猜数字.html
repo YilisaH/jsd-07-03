@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="请输入1-100之间的整数">
+<input type="button" value="猜一猜" onclick="f()">
+<div></div>
+<script>
+  //生成一个1-100之间的随机整数
+  let x = parseInt(Math.random()*100)+1;
+  let i = document.querySelector("input");
+  let b = document.querySelector("div");
+  let count = 0;
+  function f(){
+    count++;
+    if (isNaN(i.value)){
+      b.innerText = "输入错误";
+      return;
+    }
+    if (i.value==x){
+      b.innerText = "恭喜你第"+count+"次猜对了";
+      x = parseInt(Math.random()*100)+1;
+      count = 0;
+    }else if (i.value>x){
+      b.innerText = "你猜大了"
+    }else {
+      b.innerText = "你猜小了"
+    }
+    i.value = "";
+    console.log(x);
+  }
+</script>
+</body>
+</html>

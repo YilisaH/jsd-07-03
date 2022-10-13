@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body>div{
+      width: 200px;
+      /*height: 200px;*/
+      border: 1px solid red;
+        overflow: hidden;
+    }
+    div>div{
+      width: 50px;
+      height: 50px;
+    }
+    #d1{
+      background-color: red;
+
+        float: left;
+    }
+    #d2{
+      background-color: green;
+        /*height: 60px;*/
+        float: left;
+    }
+    #d3{
+      background-color: blue;
+      float: left;
+    }
+    p{
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 0;
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;/*解决高度为0 的显示异常*/
+    }
+    li{
+        float: left;
+        margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+<ul>
+    <li><a href="">首页</a></li>
+    <li><a href="">免费课</a></li>
+    <li><a href="">直播课</a></li>
+    <li><a href="">线上班</a></li>
+    <li><a href="">线下班</a></li>
+</ul>
+<div>
+    <div id="d1"></div>
+  <div id="d2"></div>
+  <div id="d3"></div>
+</div>
+<p></p>
+</body>
+</html>

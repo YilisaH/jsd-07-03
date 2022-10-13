@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!-- import CSS -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/element-ui/2.15.9/theme-chalk/index.css">
+    <style>
+        body{
+            margin: 0;/*去掉外边距*/
+            background-image: url("imgs/bg.jpg");
+            background-size: cover;/*设置封面*/
+            text-align: center;/*页面内部的文本居中*/
+        }
+        h1{
+            font-size: 72px;
+            color: #0096dc;
+            margin-bottom: 0;
+        }
+        img{
+            width: 100px;
+        }
+        h2{
+            font-size: 32px;
+            color: #0096dc;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <h1>欢迎来到酷鲨商城</h1>
+    <img src="imgs/shark.png" alt="">
+    <h2>CoolSharkMall</h2>
+    <el-card style="width: 600px;height: 300px;margin: 0 auto; background-color: rgba(255,255,255,0.3)">
+<!--        label-width设置用户名这一列所占的宽度,如果不设置会显示在上面 -->
+        <el-form label-width="60px" style="width: 400px;margin: 50px auto">
+            <el-form-item label="用户名">
+                <el-input type="text" v-model="user.username" placeholder="请输入用户名"></el-input>
+            </el-form-item>
+            <el-form-item label="密码">
+                <el-input type="password" v-model="user.password" placeholder="请输入密码"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button style="position: relative;right: 30px" type="primary">登录</el-button>
+            </el-form-item>
+        </el-form>
+    </el-card>
+</div>
+</body>
+<!-- import Vue before Element -->
+<script src="https://cdn.staticfile.org/vue/2.6.14/vue.min.js"></script>
+<!-- import JavaScript -->
+<script src="https://cdn.staticfile.org/element-ui/2.15.9/index.min.js"></script>
+<script>
+    let v = new Vue({
+        el: '#app',
+        data: function() {
+            return {
+                user:{
+                    username:"",
+                    password:""
+                }
+            }
+
+        },
+        methods:{
+
+        }
+
+    })
+</script>
+</html>

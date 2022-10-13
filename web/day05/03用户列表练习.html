@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <caption>用户列表</caption>
+  <tr>
+    <td>用户名</td>
+    <td>昵称</td>
+    <td>密码</td>
+  </tr>
+</table>
+<script>
+  //准备一个数组  数组中包含三个用户对象,对象包括:用户名,密码,昵称
+  //在页面中添加一个表格标签  把数组中的三个对象里面的数据展示到表格中
+  let arr = [{username:"张飞",nickname:"飞飞小公举",password:123456},
+    {username:"关羽",nickname:"长胡子老爷爷",password:123456},
+    {username:"刘备",nickname:"牛杂小王子",password:123456}];
+  let table = document.querySelector("table");
+  //增强for遍历数组
+  for (let t of arr) {
+    let tr = document.createElement("tr");
+    let un = document.createElement("td");
+    let nn = document.createElement("td");
+    let ps = document.createElement("td");
+    un.innerText = t.username;
+    nn.innerText = t.nickname;
+    ps.innerText = t.password;
+    tr.append(un,nn,ps);
+    table.append(tr);
+  }
+</script>
+</body>
+</html>

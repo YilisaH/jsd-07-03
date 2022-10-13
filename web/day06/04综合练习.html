@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+<h1>员工管理系统</h1>
+
+  <div v-if="isLogin">
+    <input type="text" v-model="name" placeholder="员工姓名">
+    <input type="button" value="添加" @click="add()">
+    <a href="javascript:void(0)" @click="escs()">退出登录</a>
+  </div>
+  <div v-else>
+    <a href="">注册</a>
+    <!--javascript:void(0)废掉跳转功能-->
+    <a href="javascript:void(0)" @click="login()">登录</a>
+  </div>
+  <table border="1">
+    <caption>员工列表</caption>
+    <tr>
+      <th>编号</th><th>姓名</th><th v-if="isLogin">操作</th>
+    </tr>
+    <tr v-for="(name,i) in arr">
+      <td>{{i+1}}</td>
+      <td>{{name}}</td>
+      <td v-if="isLogin"><a href="javascript:void(0)" @click="del(i)">delete</a></td>
+    </tr>
+  </table>
+</div>
+<script src="https://unpkg.com/vue@2.6.14/dist/vue.min.js"></script>
+<script>
+  let v = new Vue({
+    el:"body>div",
+    data:{
+      isLogin:false,
+      arr:[],
+      name:""
+    },
+    methods:{
+      login(){
+        v.isLogin = true;
+      },
+      escs(){
+        v.isLogin = false;
+      },
+      add(){
+        v.arr.push(v.name);
+      },
+      del(i){
+        v.arr.splice(i,1)
+      }
+
+    }
+  })
+</script>
+</body>
+</html>

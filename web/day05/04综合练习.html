@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table border="1">
+  <caption>个人信息</caption>
+  <tr>
+    <td>照片</td>
+    <td id="head_td"></td>
+  </tr>
+  <tr>
+    <td>名字:</td>
+    <td id="name_id"></td>
+  </tr>
+  <tr>
+    <td>年龄:</td>
+    <td id="age_td"></td>
+  </tr>
+  <tr>
+    <td>好友:</td>
+    <td id="friend_td"></td>
+  </tr>
+</table>
+<input type="button" value="请求数据" onclick="f()">
+
+<script>
+  function f() {
+    //模拟数据是从服务器请求回来的
+    let person = {name:"苍老师",age:18,url:"../day04/a.jpg",friends:["传奇","克金","程恒"]}
+    let headTd = document.querySelector("#head_td");
+    let nameTd = document.querySelector("#name_id");
+    let ageTd = document.querySelector("#age_td");
+    let friendTd = document.querySelector("#friend_td");
+    let img = document.createElement("img");
+    img.src = person.url;
+    headTd.append(img);
+    nameTd.innerText = person.name;
+    ageTd.innerText = person.age;
+    let ul = document.createElement("ul");
+    for (let friend of person.friends) {
+      let li = document.createElement("li");
+      li.innerText = friend;
+      ul.append(li);
+    }
+    friendTd.append(ul);
+    //1.创建图片标签  显示person对象里面url对应的图片  把图片标签添加到head_td里面
+    //2.修改name_td的内容为person里面的名字
+    //3.修改age_td的内容为person里面的年龄
+    //4.创建ul  遍历好友数组,遍历的过程中创建li标签,把好友名字装进li里面
+    //5.把li装进ul  最后把ul装进 friend_td里面
+  }
+</script>
+</body>
+</html>

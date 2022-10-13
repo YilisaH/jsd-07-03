@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text">
+<input type="button" value="平方" onclick="f()">
+<input type="button" value="求和" onclick="f1()">
+<div>结果:</div>
+<script>
+  let d = document.querySelector("div");
+  let i = document.querySelector("input");
+  function f1(){
+    //当字符串进行-*/运算时会自动将字符串转成数值
+    // d.innerText ="结果:"+(i.value*1+i.value*1);
+    d.innerText = "结果:"+(parseFloat(i.value)+parseFloat(i.value));
+  }
+  function f(){
+    //判断用户输入的内容是否是数值  如果是NaN代表不是数值
+    if (isNaN(i.value)){
+      d.innerText = "输入错误!";
+      return;
+    }
+    d.innerText = "结果:"+i.value*i.value;
+  }
+</script>
+</body>
+</html>

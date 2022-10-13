@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--cation设置提交地址-->
+<form action="https://www.bilibili.com">
+<!--  所有控件必须添加name属性,否则将不会提交参数
+maxlength最大字符长度,value设置默认值,readonly只读-->
+  用户名:<input type="text" name="username" maxlength="5"
+             value="abc" readonly plaseholer="用户名"><br>
+  密码:<input type="password" name="password" placeholder="密码"><br>
+<!--  单选的value属性必须添加,否则提交的是on checked默认选中-->
+  性别:<input type="radio" name="gender" checked value="m" id="r1"><label for="r1">男</label>
+  <input type="radio" name="gender" value="w" id="r2"> <label for="r2">女</label><br>
+<!--  多选属性和单选属性写法一样-->
+  兴趣爱好:<input type="checkbox" name="hobby" value="hj">抽烟
+  <input type="checkbox"name="hobby" checked value="hj">喝酒
+  <input type="checkbox"name="hobby"  value="tt">烫头<br>
+<!--  日期选择器-->
+  生日:<input type="date" name="birthday"><br>
+  <!--  文件选择器-->
+  靓照:<input type="file" name="pic"><br>
+<!--  下拉选-->
+  所在地：
+  <select name="city">
+<!--    value设置提交的内容，如果没有value则提交标签体的文本-->
+    <option value="bj">北京</option>
+<!--    selected设置默认选中-->
+    <option selected value="sh">上海</option>
+    <option value="gz">广州</option>
+  </select><br>
+  <input type="submit" value="注册">
+  <input type="reset" value="重新设置">
+<!--  自定义按钮-->
+  <input type="button" value="按钮">
+  <hr>
+  <button type="submit">注册</button>
+  <button type="reset">重置</button>
+  <button type="button">按钮</button>
+</form>
+<hr>
+<form action="https://bilibili.com">
+  用户名:<input type="text" name="username" maxlength="5"
+value="abc" readonly
+placeholder="用户名"><br>
+  密码:<input type="password" name="password" placeholder="密码"><br>
+  性别:<input type="radio" name="gender" value="m" id="r3">
+  <label for="r3">男</label>
+  <input type="radio" name="gender" value="w" id="r4">
+  <label for="r4">女</label><br>
+  兴趣爱好:<input type="checkbox" name="hobby" value="cy">抽烟
+  <input type="checkbox" name="hobby" checked value="hj">喝酒
+  <input type="checkbox" name="hobby" value="tt">烫头<br>
+  生日:<input type="date" name="birthday"><br>
+  靓照:<input type="file" name="pic"><br>
+
+
+</form>
+</body>
+</html>

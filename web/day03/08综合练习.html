@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    body{
+      font: 12px "simhei", Arial, Helvetica, sans-serif;
+      color: #666;
+    }
+    body>div{
+      width: 366px;
+      height: 233px;
+      background: #E8E8E8;
+    }
+   #top_div{
+     /*width: 355px;*/
+     height: 35px;
+     /*line-height: 35px;*/
+     /*padding-left: 11px;*/
+     background-color: #0aa1ed;
+     border-radius: 2px;
+   }
+   body>div>div{
+     padding-left: 10px;
+   }
+   #top_div>span{
+     font-size: 16px;
+     color: #fff;
+     /*margin-right: 9px;*/
+     position: relative;/*相对定位*/
+     bottom: 3px;
+   }
+   #top_div>img{
+     margin-top: 8px;
+     width: 29px;
+     height: 20px;
+
+   }
+   p,ul{
+     margin: 0;
+     padding: 0;
+   }
+   ul{
+     list-style-type: none;
+     /*解决内标签浮动粘连问题*/
+     overflow: hidden;
+   }
+   .c1,ul,li,a{
+    color: #0aa1ed;
+     text-decoration: none;
+     margin: 0px;
+     padding: 0px;
+     border: none;
+   }
+   a:hover{
+     color: #0a7eb8;
+   }
+   /* ul{*/
+   /*   list-style: none;*/
+   /*   margin: 0;*/
+   /*   padding: 0;*/
+   /*   overflow: hidden;!*解决高度为0 的显示异常*!*/
+   /* }*/
+    li{
+      float: left;
+      margin-right: 10px;
+    }
+    .c1>p{
+      /*margin-top: 17px;*/
+      /*margin-bottom: 9px;*/
+      color: #62B5EC;
+      margin: 20px 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+<div>
+<div id="top_div">
+  <img src="http://doc.canglaoshi.org/tstore_v1/images/itemCat/computer_icon1.png" alt="">
+  <span>电脑,办公/1F</span>
+</div>
+  <div class="c1">
+  <p>电脑整机</p>
+  <ul>
+    <li><a href="">笔记本</a></li>
+    <li><a href="">游戏机</a></li>
+    <li><a href="">台式机</a></li>
+    <li><a href="">一体机</a></li>
+    <li><a href="">服务器</a></li>
+    <li><a href="">联想</a></li>
+  </ul>
+  </div>
+  <div class="c1">
+    <p>电脑配件</p>
+    <ul>
+      <li><a href="">CPU</a></li>
+      <li><a href="">SSD硬盘</a></li>
+      <li><a href="">显示器</a></li>
+      <li><a href="">显卡</a></li>
+      <li><a href="">组装电脑</a></li>
+      <li><a href="">机箱</a></li>
+    </ul>
+  </div>
+  <div class="c1">
+    <p>外设/游戏</p>
+    <ul>
+      <li><a href="">键盘</a></li>
+      <li><a href="">鼠标</a></li>
+      <li><a href="">U盘</a></li>
+      <li><a href="">移动硬盘</a></li>
+      <li><a href="">游戏设备</a></li>
+      <li><a href="">只能单车</a></li>
+    </ul>
+  </div>
+</div>
+</body>
+</html>
